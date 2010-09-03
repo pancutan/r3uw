@@ -1,10 +1,12 @@
 class CreateBugs < ActiveRecord::Migration
   def self.up
     create_table :bugs do |t|
+      t.boolean :accepted
+      t.boolean :resolved
       t.string :name
-      t.integer :id_version
+      t.integer :version_id
       t.integer :page
-      t.integer :id_type
+      t.integer :type_id
       t.string :description
 
       t.timestamps

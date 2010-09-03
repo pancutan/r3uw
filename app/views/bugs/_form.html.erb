@@ -12,20 +12,28 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :accepted %><br />
+    <%= f.check_box :accepted %>
+  </div>
+  <div class="field">
+    <%= f.label :resolved %><br />
+    <%= f.check_box :resolved %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :id_version %><br />
-    <%= f.text_field :id_version %>
+    <%= f.label :version_id %><br />
+    <%= f.text_field :version_id %>
   </div>
   <div class="field">
     <%= f.label :page %><br />
     <%= f.text_field :page %>
   </div>
   <div class="field">
-    <%= f.label :id_type %><br />
-    <%= f.text_field :id_type %>
+    <%= f.label :type_id %><br />
+    <%= f.text_field :type_id %>
   </div>
   <div class="field">
     <%= f.label :description %><br />

@@ -2,10 +2,12 @@
 
 <table>
   <tr>
+    <th>Accepted</th>
+    <th>Resolved</th>
     <th>Name</th>
-    <th>Id version</th>
+    <th>Version</th>
     <th>Page</th>
-    <th>Id type</th>
+    <th>Type</th>
     <th>Description</th>
     <th></th>
     <th></th>
@@ -14,10 +16,12 @@
 
 <% @bugs.each do |bug| %>
   <tr>
+    <td><%= bug.accepted %></td>
+    <td><%= bug.resolved %></td>
     <td><%= bug.name %></td>
-    <td><%= bug.id_version %></td>
+    <td><%= bug.version_id %></td>
     <td><%= bug.page %></td>
-    <td><%= bug.id_type %></td>
+    <td><%= bug.type_id %></td>
     <td><%= bug.description %></td>
     <td><%= link_to 'Show', bug %></td>
     <td><%= link_to 'Edit', edit_bug_path(bug) %></td>

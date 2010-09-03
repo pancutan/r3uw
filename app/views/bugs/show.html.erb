@@ -1,13 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Accepted:</b>
+  <%= @bug.accepted %>
+</p>
+
+<p>
+  <b>Resolved:</b>
+  <%= @bug.resolved %>
+</p>
+
+<p>
   <b>Name:</b>
   <%= @bug.name %>
 </p>
 
 <p>
-  <b>Id version:</b>
-  <%= @bug.id_version %>
+  <b>Version:</b>
+  <%= @bug.version_id %>
 </p>
 
 <p>
@@ -16,8 +26,8 @@
 </p>
 
 <p>
-  <b>Id type:</b>
-  <%= @bug.id_type %>
+  <b>Type:</b>
+  <%= @bug.type_id %>
 </p>
 
 <p>
