@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @bug.name %>
+</p>
+
+<p>
+  <b>Id version:</b>
+  <%= @bug.id_version %>
+</p>
+
+<p>
+  <b>Page:</b>
+  <%= @bug.page %>
+</p>
+
+<p>
+  <b>Id type:</b>
+  <%= @bug.id_type %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @bug.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_bug_path(@bug) %> |
+<%= link_to 'Back', bugs_path %>

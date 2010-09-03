@@ -1,0 +1,23 @@
+<h1>Listing error_types</h1>
+
+<table>
+  <tr>
+    <th>Errortype</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @error_types.each do |error_type| %>
+  <tr>
+    <td><%= error_type.errortype %></td>
+    <td><%= link_to 'Show', error_type %></td>
+    <td><%= link_to 'Edit', edit_error_type_path(error_type) %></td>
+    <td><%= link_to 'Destroy', error_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Error type', new_error_type_path %>
