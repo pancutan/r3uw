@@ -1,7 +1,7 @@
 <h1>Rails 3 sobre Windows y Linux Ubuntu</h1>
 <h2>Reporte de Errores</h2>
 <p></p>
-<p>Le agradezco que forme parte del seguimiento de errores y mejora continua de este libro. Toda sugerencia será bienvenida y probablemente corregida.</p>
+<p>Le agradezco que forme parte del seguimiento de errores y mejora continua de este libro. Toda sugerencia será bienvenida y probablemente corregida :P</p>
 <p>Sírvase completar la siguiente forma. No requiere registración.</p>
 
 <%= form_for(@bug) do |f| %>
@@ -42,7 +42,11 @@
   <div class="field">
     Descripción
     <%#= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%#= f.text_field :description %>
+
+    <%= text_area(:bug, :description, :cols => 40, :rows => 14) %>
+
+
   </div>
   <div class="actions">
     <%= f.submit %>
