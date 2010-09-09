@@ -28,6 +28,8 @@ class BugsController < ApplicationController
   # GET /bugs/new.xml
   def new
     @bug = Bug.new
+    @versions = Version.all
+    @error_types = ErrorType.all
 
     respond_to do |format|
       format.html # new.html.erb
