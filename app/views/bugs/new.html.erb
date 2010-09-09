@@ -1,4 +1,8 @@
-<h1>New bug</h1>
+<h1>Rails 3 sobre Windows y Linux Ubuntu</h1>
+<h2>Reporte de Errores</h2>
+<p></p>
+<p>Le agradezco que forme parte del seguimiento de errores y mejora continua de este libro. Toda sugerencia será bienvenida y probablemente corregida.</p>
+<p>Sírvase completar la siguiente forma. No requiere registración.</p>
 
 <%= form_for(@bug) do |f| %>
   <% if @bug.errors.any? %>
@@ -14,23 +18,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    Nombre / Nombre y Apellido / Nick <br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :version_id %><br />
+    Versión del libro
+    <%#= f.label :version_id %><br />
     <%= f.text_field :version_id %>
   </div>
   <div class="field">
-    <%= f.label :page %><br />
+    Página
+    <%#= f.label :page %><br />
     <%= f.text_field :page %>
   </div>
   <div class="field">
-    <%= f.label :type_id %><br />
+    Tipo de reporte
+    <%#= f.label :type_id %><br />
     <%= f.text_field :type_id %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    Descripción
+    <%#= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
   <div class="actions">
