@@ -1,4 +1,5 @@
 class VersionsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /versions
   # GET /versions.xml
   def index

@@ -1,4 +1,5 @@
 class ErrorTypesController < ApplicationController
+  before_filter :authenticate_user!
   # GET /error_types
   # GET /error_types.xml
   def index

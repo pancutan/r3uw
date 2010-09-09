@@ -1,4 +1,7 @@
 class BugsController < ApplicationController
+  
+  before_filter :authenticate_user!, :except => [:show, :index, :new, :create]
+  
   # GET /bugs
   # GET /bugs.xml
   def index
