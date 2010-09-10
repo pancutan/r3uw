@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100909154953) do
+ActiveRecord::Schema.define(:version => 20100910052848) do
 
   create_table "bugs", :force => true do |t|
     t.boolean  "accepted"
@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(:version => 20100909154953) do
     t.string   "name"
     t.integer  "version_id"
     t.integer  "page"
-    t.integer  "type_id"
-    t.text     "description", :limit => 255
+    t.integer  "errortype_id"
+    t.text     "description",  :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

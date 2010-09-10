@@ -18,7 +18,7 @@
 <% @bugs.each do |bug| %>
   <tr>
     <td><%= bug.name %></td>
-    <td><%= bug.version_id %></td>
+    <td><%= bug.version.version %></td>
     <td><%= bug.page %></td>
     <td><%= bug.type_id %></td>
     <td><%= bug.description %></td>
