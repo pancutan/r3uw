@@ -1,4 +1,4 @@
 class ErrorType < ActiveRecord::Base
-  has_one :bug
+  has_many :bugs
 
 end

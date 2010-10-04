@@ -35,7 +35,7 @@
   </div>
   <div class="field">
     Tipo de reporte
-<%= f.select :type_id, @error_types.map {|cat| [cat.errortype, cat.id]} %>
+<%= f.select :error_type_id, @error_types.map {|cat| [cat.errortype, cat.id]} %>
     <%#= f.label :type_id %><br />
     <%#= f.text_field :type_id %>
   </div>
