@@ -1,37 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Accepted:</b>
-  <%= @bug.accepted %>
-</p>
-
-<p>
-  <b>Resolved:</b>
-  <%= @bug.resolved %>
-</p>
-
-<p>
-  <b>Name:</b>
+  <b>Reportado por:</b>
   <%= @bug.name %>
 </p>
 
 <p>
-  <b>Version:</b>
-  <%= @bug.version_id %>
+  <b>Encontrado en version:</b>
+  <%= @bug.version.version %>
 </p>
 
 <p>
-  <b>Page:</b>
+  <b>Página:</b>
   <%= @bug.page %>
 </p>
 
 <p>
-  <b>Type:</b>
-  <%= @bug.type_id %>
+  <b>Tipo de error:</b>
+  <%= @bug.error_type.errortype %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Aceptado por Sergio: </b>
+  <%= @bug.accepted %>
+</p>
+
+<p>
+  <b>Corregido en la versión actual: </b>
+  <%= @bug.resolved %>
+</p>
+
+
+
+<p>
+  <b>Descripción:</b>
   <%= @bug.description %>
 </p>
 

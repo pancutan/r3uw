@@ -1,16 +1,45 @@
-<h1>Listing bugs</h1>
+<h2>Libro</h2>
+<h1>Rails 3 para Windows y Linux Ubuntu</h1>
 
-<table>
+<h2>Listado de erratas & bugs</h2>
+
+<img src="images/TapaLibroRails.png">
+
+<p>Bienvenido al sistema de seguimiento de errores de este libro. Antes de postear su descubrimiento, sírvase chequear 
+  su versión contra <a href="http://www.bunker.org.ar/incubadora/LibroRails3">la última disponible.</a></p>
+<p>Al final podrá encontrar un enlace para avisar de errores e inconsistencias.</p>
+<p>Sergio A. Alonso - Datos de Contacto</p>
+<ul>
+  <li>
+     <a href="http://ar.linkedin.com/in/alonsosergio">Perfil en LinkedIn</a>
+  </li>
+  <li>
+     <a href="http://www.twitter.com/karancho">Follow me on Twitter!</a>
+  </li>
+  <li>
+     <a href="http://obelix.bunker.org.ar">Blog</a>
+  </li>
+  <li>
+     <a href="http://www.github.com/karancho">GitHub</a>
+  </li>
+ 
+  <li>
+    Email: sergio at eim esc edu ar
+  </li>
+
+
+</ul>
+
+<table border="1">
   <tr>
     <th>Reportado por</th>
     <th>Version</th>
     <th>Pagina</th>
     <th>Type</th>
     <th>Descripcion</th>
-    <th>Aceptado</th>
+    <th>Aceptado por Sergio</th>
     <th>Resuelto</th>
 
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -27,11 +56,11 @@
 
     <td><%= link_to 'Show', bug %></td>
     <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
-    <td><%= link_to 'Destroy', bug, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!-- <td> --> <%#= link_to 'Destroy', bug, :confirm => 'Are you sure?', :method => :delete %> <!-- </td> -->
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Bug', new_bug_path %>
+<%= link_to 'Nuevo Error / Sugerencia', new_bug_path %>

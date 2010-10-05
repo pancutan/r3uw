@@ -25,15 +25,14 @@
   </div>
   <div class="field">
     <%= f.label :version_id %><br />
-    <%= f.text_field :version_id %>
+    <%= @bug.version.version %>
   </div>
   <div class="field">
     <%= f.label :page %><br />
     <%= f.text_field :page %>
   </div>
   <div class="field">
-    <%= f.label :type_id %><br />
-    <%= f.text_field :type_id %>
+    <p>Tipo: <%= @bug.error_type.errortype %> </p>
   </div>
   <div class="field">
     <%= f.label :description %><br />
