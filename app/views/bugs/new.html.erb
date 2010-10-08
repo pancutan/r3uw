@@ -1,5 +1,4 @@
-<h1>Rails 3 sobre Windows y Linux Ubuntu</h1>
-<h2>Reporte de Errores</h2>
+<h3>Nuevo reporte de error / sugerencia</h3>
 <p></p>
 <p>Le agradezco que forme parte del seguimiento de errores y mejora continua de este libro. Toda sugerencia será bienvenida y probablemente corregida :P</p>
 <p>Sírvase completar la siguiente forma. No requiere registración.</p>
@@ -25,24 +24,18 @@
     Versión del libro
 <%= f.select :version_id, @versions.map {|cat| [cat.version, cat.id]} %>
 
-    <%#= f.label :version_id %>
-    <%#= f.text_field :version_id %>
   </div>
   <div class="field">
-    Página (0 para ninguna en particular)
+    Página
     <%#= f.label :page %>
     <%= f.text_field :page, :size => 3 %>
   </div>
   <div class="field">
     Tipo de reporte
 <%= f.select :error_type_id, @error_types.map {|cat| [cat.errortype, cat.id]} %>
-    <%#= f.label :type_id %><br />
-    <%#= f.text_field :type_id %>
   </div>
   <div class="field">
     Descripción
-    <%#= f.label :description %><br />
-    <%#= f.text_field :description %>
 
     <%= text_area(:bug, :description, :cols => 40, :rows => 14) %>
 

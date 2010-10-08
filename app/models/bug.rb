@@ -4,7 +4,7 @@ class Bug < ActiveRecord::Base
   belongs_to :error_type
   belongs_to :version
 
-  validates_presence_of :name
+  validates_presence_of :name, :version_id, :error_type_id
   validates_numericality_of :page
 
 end

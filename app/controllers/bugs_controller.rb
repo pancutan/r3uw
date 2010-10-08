@@ -40,12 +40,19 @@ class BugsController < ApplicationController
   # GET /bugs/1/edit
   def edit
     @bug = Bug.find(params[:id])
+    @versions = Version.all
+    @error_types = ErrorType.all
+
+
+
   end
 
   # POST /bugs
   # POST /bugs.xml
   def create
-    @bug = Bug.new(params[:bug])
+    @bug = Bug.new(params[:bug]) 
+    @versions = Version.all
+    @error_types = ErrorType.all
 
     respond_to do |format|
       if @bug.save
@@ -62,7 +69,8 @@ class BugsController < ApplicationController
   # PUT /bugs/1.xml
   def update
     @bug = Bug.find(params[:id])
-
+    @versions = Version.all
+    @error_types = ErrorType.all
     respond_to do |format|
       if @bug.update_attributes(params[:bug])
         format.html { redirect_to(@bug, :notice => 'Bug was successfully updated.') }
