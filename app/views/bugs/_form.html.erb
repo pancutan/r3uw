@@ -31,10 +31,13 @@
     <%= f.label :page %><br />
     <%= f.text_field :page %>
   </div>
-  <div class="field">
-    <p>Tipo: <%= @bug.error_type.errortype %> </p>
+<div class="field">
+    Tipo de reporte
+<%= f.select :error_type_id, @error_types.map {|cat| [cat.errortype, cat.id]} %>
   </div>
-  <div class="field">
+
+
+ <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>

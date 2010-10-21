@@ -35,8 +35,6 @@
 <%= f.select :error_type_id, @error_types.map {|cat| [cat.errortype, cat.id]} %>
   </div>
   <div class="field">
-    Descripción
-
     <%= text_area(:bug, :description, :cols => 40, :rows => 14) %>
 
 

@@ -5,7 +5,7 @@ class BugsController < ApplicationController
   # GET /bugs
   # GET /bugs.xml
   def index
-    @bugs = Bug.all
+    @bugs = Bug.order("resolved")
 
     respond_to do |format|
       format.html # index.html.erb

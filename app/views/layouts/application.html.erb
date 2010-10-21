@@ -9,7 +9,10 @@
 <body>
 
 
-  <div id="user_nav">  
+<%= image_tag("TapaLibroRails.png",:border=>0, :align=>"right") %>
+
+
+<div id="user_nav">  
    <% if user_signed_in? %>  
      Signed in as <%= current_user.email %>. <!-- Not you? -->  
      <%= link_to "Sign out", destroy_user_session_path %>  
@@ -17,7 +20,7 @@
      <%#= link_to "Sign up", new_user_registration_path %> <!-- or -->  
      <%= link_to "Sign in", new_user_session_path %>  
    <% end %>  
- </div> 
+</div> 
 
 <h2>Libro: </h2>
 <h1>Rails 3 para Windows y Linux Ubuntu</h1>
@@ -25,7 +28,6 @@
 <h2>Listado de erratas & bugs</h2>
 
 
-<%= image_tag("TapaLibroRails.png",:border=>0, :align=>'rigth', :options => {:align=>"right" }) %>
 
 <p>Bienvenido al sistema de seguimiento de errores de este libro. Antes de postear su descubrimiento, sírvase chequear 
   su versión contra <a href="http://www.bunker.org.ar/incubadora/LibroRails3">la última disponible.</a></p>
