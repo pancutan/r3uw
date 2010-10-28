@@ -1,29 +1,34 @@
 <h1>Checklist#index</h1>
-Revisar http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html
-
-<table border="1">
-<%# @bichos.each do |b| %>
-    <td><%#= b.description %></td>
-    <td><%#= check_box("accepted", "validated")</td>
-<%# end %>
-</table>
-
 
 <%= form_tag({:action => "check"}, {:id => 'my_form'}) %>
 <center>
-<a href="" onClick="$$('#my_form input.check').each(function(box){box.checked=true});return false;"/>SELECT ALL</a>
-<a href="" onClick="$$('#my_form input.check').each(function(box){box.checked=false});return false;"/>DESELECT ALL</a>
 <table border=1>
  <tr>
+    <th>id</th>
     <th>descripcion</th>
-    <th>check? </th>
-    <th>Stuff</th>
+    <th>Resuelto<br>
+        <a href="" onClick="$$('#my_form input.resuelto').each(function(box){box.checked=true});return false;"/>Todos</a>
+        <a href="" onClick="$$('#my_form input.resuelto').each(function(box){box.checked=false});return false;"/>Ninguno</a>
+    </th>
+    <th>Aceptado<br>
+        <a href="" onClick="$$('#my_form input.aceptado').each(function(box){box.checked=true});return false;"/>Todos</a>
+        <a href="" onClick="$$('#my_form input.aceptado').each(function(box){box.checked=false});return false;"/>Ninguno</a>
+    </th>
   </tr>
+
+
 <% @bichos.each do |stuff| %>
   <tr>
+    <td><%= stuff.id %></td>
     <td><%= stuff.description %></td>
-        <td><input id="accepted" name="stuff[accepted]" value="",  type="checkbox", class = "check"></td>
-    <td><%=link_to stuff.accepted, :action=>'do_it', :id=>stuff.accepted %></td>
+    <td>
+        <%= check_box_tag "cb2_[#{stuff.id}]", 'yes', stuff.resolved, :class => 'resuelto',  :value => stuff.id %>
+    </td>
+
+    <td>
+        <%= check_box_tag "cb_[#{stuff.id}]", 'yes', stuff.accepted, :class => 'aceptado',  :value => stuff.id %>
+    </td>
+
   </tr>
 <% end %>
 </table></center>

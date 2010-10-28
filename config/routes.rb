@@ -1,6 +1,6 @@
 R3uw::Application.routes.draw do
   get "checklist/index"
-  put "checklist/check"
+  post "checklist/check"
   put "checklist/do_it"
 
   devise_for :users
