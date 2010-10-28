@@ -9,11 +9,12 @@
 <body>
 
 
-<%= image_tag("TapaLibroRails.png",:border=>0, :align=>"right") %>
-
+<%= image_tag("TapaLibroRails.png",:border=>0, :align=>"right", :size => "221x317") %>
 
 <div id="user_nav">  
-   <% if user_signed_in? %>  
+  <%= link_to "Principal", bugs_path %>
+   <% if user_signed_in? %> 
+     <%= link_to "Checklist rápido",  checklist_index_path %> <br> 
      Signed in as <%= current_user.email %>. <!-- Not you? -->  
      <%= link_to "Sign out", destroy_user_session_path %>  
    <% else %>  

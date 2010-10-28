@@ -32,21 +32,36 @@
     <th>Resuelto</th>
 
     <th></th>
-    <th></th>
   </tr>
 
 <% @bugs.each do |bug| %>
   <tr>
-    <td><%= bug.name %></td>
-    <td><%= bug.version.version %></td>
-    <td><%= bug.page %></td>
-    <td><%= bug.error_type.errortype %></td>
-    <td><%= bug.description %></td>
-    <td><%= bug.accepted %></td>
-    <td><%= bug.resolved %></td>
+    <td align="center"><%= bug.name %></td>
+    <td align="center"><%= bug.version.version %></td>
+    <td align="center"><%= bug.page %></td>
 
-    <td><%= link_to 'Show', bug %></td>
-    <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+    <td>
+      <% if bug.error_type.errortype == "Ortografía / Gramática" %>
+        <font color="orange">
+      <% end %>
+
+      <% if bug.error_type.errortype == "Error Técnico" %>
+        <font color="red">
+      <% end %>
+
+      <%= bug.error_type.errortype %>
+    </td>
+
+    <td><%= bug.description %></td>
+    <td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.accepted, :value => bug.id, :disabled => true %>  </td>
+
+    <td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.resolved, :value => bug.id, :disabled => true %>  </td>
+
+    <td><%= link_to '?', bug %></td>
+    
+    <% if user_signed_in? %> 
+      <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+    <% end %>
     <!-- <td> --> <%#= link_to 'Destroy', bug, :confirm => 'Are you sure?', :method => :delete %> <!-- </td> -->
   </tr>
 <% end %>

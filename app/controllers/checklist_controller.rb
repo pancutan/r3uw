@@ -8,11 +8,12 @@ class ChecklistController < ApplicationController
   end
 
   def check
+    Bug.update_all("resolved = 'f', accepted = 'f'")
+    
     #debugger
     @bugs = Bug.all
  
     #@_params[:cb_]["13"]
-    
     @bugs.each do |bug|
 
       params[:cb_].each do |parametro|
@@ -48,7 +49,8 @@ class ChecklistController < ApplicationController
 
     #x = params[:cb_]
     #x.each do |y|
-          
+
+    redirect_to (:action => 'index') 
   end
 
 end
