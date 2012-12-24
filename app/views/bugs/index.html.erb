@@ -65,8 +65,8 @@
 
     <% if user_signed_in? %>
       <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+      <td><%= link_to 'X', bug, :confirm => 'Are you sure?', :method => :delete %> </td>
     <% end %>
-    <!-- <td> --> <%#= link_to 'Destroy', bug, :confirm => 'Are you sure?', :method => :delete %> <!-- </td> -->
   </tr>
 <% end %>
 </table>
