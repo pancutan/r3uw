@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101007235715) do
+ActiveRecord::Schema.define(:version => 20121225000102) do
 
   create_table "bugs", :force => true do |t|
     t.boolean  "accepted"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20101007235715) do
     t.text     "description",   :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
   create_table "error_types", :force => true do |t|

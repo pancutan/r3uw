@@ -31,6 +31,11 @@
     <th>Version</th>
     <th>Pagina</th>
     <th>Type</th>
+
+    <% if user_signed_in? %>
+      <th>Email</th>
+    <% end %>
+
     <th>Descripcion</th>
     <th>Aceptado por Sergio</th>
     <th>Resuelto</th>
@@ -43,7 +48,6 @@
     <td align="center"><%= bug.name %></td>
     <td align="center"><%= bug.version.version %></td>
     <td align="center"><%= bug.page %></td>
-
     <td>
       <% if bug.error_type.errortype == "Ortografía / Gramática" %>
         <font color="orange">
@@ -55,6 +59,10 @@
 
       <%= bug.error_type.errortype %>
     </td>
+
+    <% if user_signed_in? %>
+      <td align="center"><%= bug.email %></td>
+    <% end %>
 
     <td><%= bug.description %></td>
     <td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.accepted, :value => bug.id, :disabled => true %>  </td>

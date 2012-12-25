@@ -20,6 +20,12 @@
     Nombre / Nombre y Apellido / Nick / Alguna cosa<br />
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    Email (no obligatorio / solo para agradecer o preguntar mas detalles sobr el bug)<br />
+    <%= f.text_field :email %>
+  </div>
+
   <div class="field">
     Versión del libro
 <%= f.select :version_id, @versions.map {|cat| [cat.version, cat.id]} %>
