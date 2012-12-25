@@ -8,20 +8,20 @@
 </head>
 <body>
 
-
+<!-- Aqui JQuery Slider -->
 <%= image_tag("TapaLibroRails.png",:border=>0, :align=>"right", :size => "221x317") %>
 
-<div id="user_nav">  
+<div id="user_nav">
   <%= link_to "Principal", bugs_path %>
-   <% if user_signed_in? %> 
-     <%= link_to "Checklist rápido",  checklist_index_path %> <br> 
-     Signed in as <%= current_user.email %>. <!-- Not you? -->  
-     <%= link_to "Sign out", destroy_user_session_path %>  
-   <% else %>  
-     <%#= link_to "Sign up", new_user_registration_path %> <!-- or -->  
-     <%= link_to "Sign in", new_user_session_path %>  
-   <% end %>  
-</div> 
+   <% if user_signed_in? %>
+     <%= link_to "Checklist rápido",  checklist_index_path %> <br>
+     Signed in as <%= current_user.email %>. <!-- Not you? -->
+     <%= link_to "Sign out", destroy_user_session_path %>
+   <% else %>
+     <%#= link_to "Sign up", new_user_registration_path %> <!-- or -->
+     <%= link_to "Sign in", new_user_session_path %>
+   <% end %>
+</div>
 
 <h2>Libro: </h2>
 <h1>Rails 3 para Windows y Linux Ubuntu</h1>
@@ -30,7 +30,7 @@
 
 
 
-<p>Bienvenido al sistema de seguimiento de errores de este libro. Antes de postear su descubrimiento, sírvase chequear 
+<p>Bienvenido al sistema de seguimiento de errores de este libro. Antes de postear su descubrimiento, sírvase chequear
   su versión contra <a href="http://www.bunker.org.ar/incubadora/LibroRails3">la última disponible.</a></p>
 
 
