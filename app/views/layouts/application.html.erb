@@ -9,7 +9,15 @@
 <body>
 
 <!-- Aqui JQuery Slider -->
-<%= image_tag("TapaLibroRails.png",:border=>0, :align=>"right", :size => "221x317") %>
+<div id="slider">
+    <img src="images/TapaLibroRails.png" align="right">
+</div>
+
+<script type="text/javascript">
+$("#slider").click(function(event){
+  $(this).html("<img src='images/vimAutoCompletado2.png'>");
+});
+</script>
 
 <div id="user_nav">
   <%= link_to "Principal", bugs_path %>
