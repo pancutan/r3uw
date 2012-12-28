@@ -22,7 +22,7 @@
   </div>
 
   <div class="field">
-    Email (no obligatorio / solo para agradecer o preguntar mas detalles sobr el bug)<br />
+    Email (no obligatorio / solo para agradecer o preguntar mas detalles sobre el bug)<br />
     <%= f.text_field :email %>
   </div>
 
@@ -45,6 +45,14 @@
 
 
   </div>
+
+  <div class="field">
+    Lleva usted tantas horas con la computadora, que ya parece un robot. Resuelva por favor este captcha</br>
+
+    <%= recaptcha_tags :public_key => '6Lcaw9oSAAAAAF3JksvqjYwADHCFco7JDkOp505R' %>
+
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

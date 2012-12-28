@@ -1,7 +1,7 @@
 class BugsController < ApplicationController
-  
+
   before_filter :authenticate_user!, :except => [:show, :index, :new, :create]
-  
+
   # GET /bugs
   # GET /bugs.xml
   def index
@@ -50,12 +50,19 @@ class BugsController < ApplicationController
   # POST /bugs
   # POST /bugs.xml
   def create
-    @bug = Bug.new(params[:bug]) 
+    @bug = Bug.new(params[:bug])
     @versions = Version.all
     @error_types = ErrorType.all
 
+    #@question = Question.new(params[:question])
+   # if verify_recaptcha() and @question.save
+   #   redirect_to :action => 'show', :permalink => @question.permalink
+   # else
+   #   render :action => 'new'
+   # end
+
     respond_to do |format|
-      if @bug.save
+      if verify_recaptcha(:model => @bug, :message => "Oh! It's error with reCAPTCHA!") and @bug.save
         format.html { redirect_to(@bug, :notice => 'Bug was successfully created.') }
         format.xml  { render :xml => @bug, :status => :created, :location => @bug }
       else
@@ -63,6 +70,12 @@ class BugsController < ApplicationController
         format.xml  { render :xml => @bug.errors, :status => :unprocessable_entity }
       end
     end
+
+
+
+
+
+
   end
 
   # PUT /bugs/1

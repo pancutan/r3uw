@@ -1,10 +1,18 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.9'
+<<<<<<< HEAD
+=======
+
+#gem 'bundler', '1.2.5'
+>>>>>>> testing
 
 gem 'ruby-debug'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+#gem 'prototype-rails'
+gem 'jquery_ujs_extended'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'railroad'
