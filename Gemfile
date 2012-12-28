@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.2.9'
 
 gem 'ruby-debug'
 # Bundle edge Rails instead:

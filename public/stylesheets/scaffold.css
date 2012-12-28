@@ -55,7 +55,11 @@ div.field, div.actions {
   list-style: square;
 }
 
-#slider img {
+#slider {
   float: right;
+}
+
+#slider img {
   width: 221px;
 }
+
