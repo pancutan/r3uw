@@ -1,62 +1,68 @@
 <h3>Nuevo reporte de error / sugerencia</h3>
 <p></p>
-<p>Le agradezco que forme parte del seguimiento de errores y mejora continua de este libro. Toda sugerencia será bienvenida y probablemente corregida :P</p>
-<p>Sírvase completar la siguiente forma. No requiere registración.</p>
+<p>
+	Le agradezco que forme parte del seguimiento de errores y mejora continua de este libro. Toda sugerencia será bienvenida y probablemente corregida :P
+</p>
+<p>
+	Sírvase completar la siguiente forma. No requiere registración.
+</p>
 
 <%= form_for(@bug) do |f| %>
-  <% if @bug.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
+<% if @bug.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
 
-      <ul>
-      <% @bug.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    Nombre / Nombre y Apellido / Nick / Alguna cosa<br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    Email (no obligatorio / solo para agradecer o preguntar mas detalles sobre el bug)<br />
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    Versión del libro
-<%= f.select :version_id, @versions.map {|cat| [cat.version, cat.id]} %>
-
-  </div>
-  <div class="field">
-    Página
-    <%#= f.label :page %>
-    <%= f.text_field :page, :size => 3 %>
-  </div>
-  <div class="field">
-    Tipo de reporte
-<%= f.select :error_type_id, @error_types.map {|cat| [cat.errortype, cat.id]} %>
-  </div>
-  <div class="field">
-    <%= text_area(:bug, :description, :cols => 40, :rows => 14) %>
-
-
-  </div>
-
-  <div class="field">
-    Lleva usted tantas horas con la computadora, que ya parece un robot. Resuelva por favor este captcha</br>
-
-    <%= recaptcha_tags :public_key => '6Lcaw9oSAAAAAF3JksvqjYwADHCFco7JDkOp505R' %>
-
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<ul>
+		<% @bug.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
 <% end %>
 
+<div class="field">
+	Nombre / Nombre y Apellido / Nick / Alguna cosa
+	<br />
+	<%= f.text_field :name %>
+</div>
+
+<div class="field">
+	Email (no obligatorio / solo para agradecer o preguntar mas detalles sobre el bug)
+	<br />
+	<%= f.text_field :email %>
+</div>
+
+<div class="field">
+	Versión del libro
+	<%= f.select :version_id, @versions.map {|cat| [cat.version, cat.id]} %>
+
+</div>
+<div class="field">
+	Página
+	<%#= f.label :page %>
+	<%= f.text_field :page, :size => 3 %>
+</div>
+<div class="field">
+	Tipo de reporte
+	<%= f.select :error_type_id, @error_types.map {|cat| [cat.errortype, cat.id]} %>
+</div>
+<div class="field">
+	<%= text_area(:bug, :description, :cols => 40, :rows => 14) %>
+
+</div>
+
+<div class="field">
+	Lleva usted tantas horas con la computadora, que ya parece un robot. Resuelva por favor este captcha</br>
+
+	<%= recaptcha_tags :public_key => '6Lcaw9oSAAAAAF3JksvqjYwADHCFco7JDkOp505R' %>
+
+</div>
+
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %>
 
 <%= link_to 'Back', bugs_path %>

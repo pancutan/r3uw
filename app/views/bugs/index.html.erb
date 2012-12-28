@@ -1,82 +1,78 @@
-<p>Al final podrá encontrar un enlace para avisar de errores e inconsistencias.</p>
-<p><b>Sergio A. Alonso</b> - Datos de Contacto:</p>
+<p>
+	Al final podrá encontrar un enlace para avisar de errores e inconsistencias.
+</p>
+<p>
+	<b>Sergio A. Alonso</b> - Datos de Contacto:
+</p>
 <ul>
-  <li>
-     <a href="http://ar.linkedin.com/in/alonsosergio">Perfil en LinkedIn</a>
-  </li>
-  <li>
-     <a href="http://www.twitter.com/karancho">Follow me on Twitter!</a>
-  </li>
-  <li>
-     <a href="http://obelix.bunker.org.ar">Blog</a>
-  </li>
-  <li>
-     <a href="http://www.github.com/karancho">GitHub</a>
-   </li>
-  <li>
-     <a href="http://about.me/elbunker">Mas cosas</a>
-  </li>
+	<li>
+		<a href="http://ar.linkedin.com/in/alonsosergio">Perfil en LinkedIn</a>
+	</li>
+	<li>
+		<a href="http://www.twitter.com/karancho">Follow me on Twitter!</a>
+	</li>
+	<li>
+		<a href="http://obelix.bunker.org.ar">Blog</a>
+	</li>
+	<li>
+		<a href="http://www.github.com/karancho">GitHub</a>
+	</li>
+	<li>
+		<a href="http://about.me/elbunker">Mas cosas</a>
+	</li>
 
-
-  <li>
-    Email: sergio at eim esc edu ar
-  </li>
-
+	<li>
+		Email: sergio at eim esc edu ar
+	</li>
 
 </ul>
 
 <table border="1">
-  <tr>
-    <th>Reportado por</th>
-    <th>Version</th>
-    <th>Pagina</th>
-    <th>Type</th>
+	<tr>
+		<th>Reportado por</th>
+		<th>Version</th>
+		<th>Pagina</th>
+		<th>Type</th>
 
-    <% if user_signed_in? %>
-      <th>Email</th>
-    <% end %>
+		<% if user_signed_in? %>
+		<th>Email</th>
+		<% end %>
 
-    <th>Descripcion</th>
-    <th>Aceptado por Sergio</th>
-    <th>Resuelto</th>
+		<th>Descripcion</th>
+		<th>Aceptado por Sergio</th>
+		<th>Resuelto</th>
 
-    <th></th>
-  </tr>
+		<th></th>
+	</tr>
 
-<% @bugs.each do |bug| %>
-  <tr>
-    <td align="center"><%= bug.name %></td>
-    <td align="center"><%= bug.version.version %></td>
-    <td align="center"><%= bug.page %></td>
-    <td>
-      <% if bug.error_type.errortype == "Ortografía / Gramática" %>
-        <font color="orange">
-      <% end %>
+	<% @bugs.each do |bug| %>
+	<tr>
+		<td align="center"><%= bug.name %></td>
+		<td align="center"><%= bug.version.version %></td>
+		<td align="center"><%= bug.page %></td>
+		<td> <% if bug.error_type.errortype == "Ortografía / Gramática" %> <font color="orange"> <% end %>
 
-      <% if bug.error_type.errortype == "Error Técnico" %>
-        <font color="red">
-      <% end %>
+			<% if bug.error_type.errortype == "Error Técnico" %> <font color="red"> <% end %>
 
-      <%= bug.error_type.errortype %>
-    </td>
+				<%= bug.error_type.errortype %> </td>
 
-    <% if user_signed_in? %>
-      <td align="center"><%= bug.email %></td>
-    <% end %>
+		<% if user_signed_in? %>
+		<td align="center"><%= bug.email %></td>
+		<% end %>
 
-    <td><%= bug.description %></td>
-    <td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.accepted, :value => bug.id, :disabled => true %>  </td>
+		<td><%= bug.description %></td>
+		<td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.accepted, :value => bug.id, :disabled => true %> </td>
 
-    <td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.resolved, :value => bug.id, :disabled => true %>  </td>
+		<td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.resolved, :value => bug.id, :disabled => true %> </td>
 
-    <td><%= link_to '?', bug %></td>
+		<td><%= link_to '?', bug %></td>
 
-    <% if user_signed_in? %>
-      <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
-      <td><%= link_to 'X', bug, :confirm => 'Are you sure?', :method => :delete %> </td>
-    <% end %>
-  </tr>
-<% end %>
+		<% if user_signed_in? %>
+		<td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+		<td><%= link_to 'X', bug, :confirm => 'Are you sure?', :method => :delete %> </td>
+		<% end %>
+	</tr>
+	<% end %>
 </table>
 
 <br />

@@ -55,7 +55,7 @@ div.field, div.actions {
   list-style: square;
 }
 
-#slider {
+#marcoSlider {
   float: right;
 }
 
@@ -63,3 +63,9 @@ div.field, div.actions {
   width: 221px;
 }
 
+.botoneraSlider {
+	/* text-align: center; 
+	margin-left: auto;
+	margin-right: auto;
+	*/
+}

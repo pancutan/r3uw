@@ -1,11 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.9'
-<<<<<<< HEAD
-=======
 
 #gem 'bundler', '1.2.5'
->>>>>>> testing
 
 gem 'ruby-debug'
 # Bundle edge Rails instead:
