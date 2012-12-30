@@ -1,31 +1,38 @@
-<p>
-	Al final podrá encontrar un enlace para avisar de errores e inconsistencias.
-</p>
-<p>
-	<b>Sergio A. Alonso</b> - Datos de Contacto:
-</p>
-<ul>
-	<li>
-		<a href="http://ar.linkedin.com/in/alonsosergio">Perfil en LinkedIn</a>
-	</li>
-	<li>
-		<a href="http://www.twitter.com/karancho">Follow me on Twitter!</a>
-	</li>
-	<li>
-		<a href="http://obelix.bunker.org.ar">Blog</a>
-	</li>
-	<li>
-		<a href="http://www.github.com/karancho">GitHub</a>
-	</li>
-	<li>
-		<a href="http://about.me/elbunker">Mas cosas</a>
-	</li>
 
-	<li>
-		Email: sergio at eim esc edu ar
-	</li>
+		<div class="sliderContainer">
 
-</ul>
+			<a href="#siguiente" class="next" title="Siguiente"></a>
+			<a href="#anterior" class="prev" title="Anterior"></a>
+
+			<div id="slider">
+
+				<div class="slidesContainer">
+					<div class="slide"><img src="images/img01.jpg" alt="Coche 01" />
+					</div>
+					<div class="slide"><img src="images/img02.jpg" alt="Coche 02" />
+					</div>
+					<div class="slide"><img src="images/img03.jpg" alt="Coche 03" />
+					</div>
+					<div class="slide"><img src="images/img04.jpg" alt="Coche 04" />
+					</div>
+					<div class="slide"><img src="images/img05.jpg" alt="Coche 05" />
+					</div>
+				</div>
+				<!-- /slidesContainer -->
+
+			</div>
+			<!-- /slider -->
+
+		</div>
+		<!-- /sliderContainer -->
+
+<p>&nbsp;</p>
+<p>
+	<center>
+		<%= link_to 'Nuevo Error / Sugerencia', new_bug_path, :class => 'css3button' %>
+	</center>
+</p>
+<p>&nbsp;</p>
 
 <table border="1">
 	<tr>
@@ -54,7 +61,9 @@
 
 			<% if bug.error_type.errortype == "Error Técnico" %> <font color="red"> <% end %>
 
-				<%= bug.error_type.errortype %> </td>
+				<% if bug.error_type.errortype == "Sugerencia" %> <font color="yellow"> <% end %>
+
+					<%= bug.error_type.errortype %> </td>
 
 		<% if user_signed_in? %>
 		<td align="center"><%= bug.email %></td>
@@ -77,4 +86,28 @@
 
 <br />
 
-<%= link_to 'Nuevo Error / Sugerencia', new_bug_path %>
+<p>
+	<b>Sergio A. Alonso</b> - Datos de Contacto:
+</p>
+<ul>
+	<li>
+		<a href="http://ar.linkedin.com/in/alonsosergio">Perfil en LinkedIn</a>
+	</li>
+	<li>
+		<a href="http://www.twitter.com/karancho">Follow me on Twitter!</a>
+	</li>
+	<li>
+		<a href="http://obelix.bunker.org.ar">Blog</a>
+	</li>
+	<li>
+		<a href="http://www.github.com/karancho">GitHub</a>
+	</li>
+	<li>
+		<a href="http://about.me/elbunker">Mas cosas</a>
+	</li>
+
+	<li>
+		Email: sergio at eim esc edu ar
+	</li>
+
+</ul>

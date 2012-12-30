@@ -5,42 +5,9 @@
 		<%= stylesheet_link_tag :all %>
 		<%= javascript_include_tag :defaults %>
 		<%= csrf_meta_tag %>
+		<script type="text/javascript" src="javascripts/mainFunctions.js"></script>
 	</head>
 	<body>
-
-		<!-- Aqui JQuery Slider -->
-		<div id="marcoSlider">
-			<span class="botoneraSlider">
-				<center>
-					<a href="#" id="uno" >[1]</a>
-					<a href="#" id="dos" >[2]</a>
-					<a href="#" id="tres">[3]</a>
-				</center></span>
-			<div id="slider">
-				<img src="images/TapaLibroRails.png">
-			</div>
-		</div>
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("#uno").click(function(event) {
-					event.preventDefault();
-					$("#slider").html("<img src='images/vimAutoCompletado2.png'>");
-				});
-
-				$("#dos").click(function(event) {
-					event.preventDefault();
-					$("#slider").html("<img src='images/sumar.jpg'>");
-				});
-
-				$("#tres").click(function(event) {
-					event.preventDefault();
-					$("#slider").html("<img src='images/TapaLibroRails.png'>");
-				});
-
-			});
-
-		</script>
 
 		<div id="user_nav">
 			<%= link_to "Principal", bugs_path %>
@@ -51,20 +18,18 @@
 			<%= link_to "Sign out", destroy_user_session_path %>
 			<% else %>
 			<%#= link_to "Sign up", new_user_registration_path %> <!-- or -->
-			<%= link_to "Sign in", new_user_session_path %>
+			<%= link_to "Sign in (Administradores)", new_user_session_path %>
 			<% end %>
 		</div>
 
 		<h2>Libro: </h2>
-		<h1>Rails 3 para Windows y Linux Ubuntu</h1>
-
-		<h2>Listado de erratas & bugs</h2>
-
-		<p>
-			Bienvenido al sistema de seguimiento de errores de este libro. Antes de postear su descubrimiento, sírvase chequear
-			su versión contra <a href="http://www.bunker.org.ar/incubadora/LibroRails3">la última disponible.</a>
-		</p>
-
+		<table>
+			<tr>
+				<td><img src="images/tapa.jpg" /></td>
+				<td><h1>Rails 3 para Windows y Linux Ubuntu</h1><h2>Listado de erratas & bugs</h2> Bienvenido al sistema de seguimiento de errores de este libro. Antes de postear su descubrimiento, sírvase chequear
+				su versión contra <a href="http://www.bunker.org.ar/incubadora/LibroRails3">la última disponible.</a></td>
+			</tr>
+		</table>
 		<%= yield %>
 
 	</body>
