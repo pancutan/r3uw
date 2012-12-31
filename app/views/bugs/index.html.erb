@@ -1,38 +1,55 @@
-
-		<div class="sliderContainer">
-
-			<a href="#siguiente" class="next" title="Siguiente"></a>
-			<a href="#anterior" class="prev" title="Anterior"></a>
-
-			<div id="slider">
-
-				<div class="slidesContainer">
-					<div class="slide"><img src="images/img01.jpg" alt="Coche 01" />
-					</div>
-					<div class="slide"><img src="images/img02.jpg" alt="Coche 02" />
-					</div>
-					<div class="slide"><img src="images/img03.jpg" alt="Coche 03" />
-					</div>
-					<div class="slide"><img src="images/img04.jpg" alt="Coche 04" />
-					</div>
-					<div class="slide"><img src="images/img05.jpg" alt="Coche 05" />
-					</div>
-				</div>
-				<!-- /slidesContainer -->
-
+		<div id="wrapper">
+			<div id="tapa">
+				<img src="images/tapa.jpg" />
+				<div id="botonMonono">
+	<%= link_to 'Nuevo Error / Sugerencia', new_bug_path, :class => 'css3button' %>
+</div>
 			</div>
-			<!-- /slider -->
 
+			<div id="titulo">
+				<h2>Libro: </h2>
+				<h1>Rails 3 para Windows y Linux Ubuntu</h1>
+				<h2>Listado de erratas & bugs</h2>
+				<h3>Bienvenido al sistema de seguimiento de errores de este libro. Antes de postear su descubrimiento, sírvase chequear
+				su versión contra <a href="http://www.bunker.org.ar/incubadora/LibroRails3">la última disponible.</a></h3>
+			</div>
+			<div id="elslider">
+				&nbsp;
+			</div>
 		</div>
-		<!-- /sliderContainer -->
 
-<p>&nbsp;</p>
+
+<div id="sliderContenedor" class="sliderContainer">
+
+	<a href="#siguiente" class="next" title="Siguiente"></a>
+	<a href="#anterior" class="prev" title="Anterior"></a>
+
+	<div id="slider">
+
+		<div class="slidesContainer">
+			<div class="slide"><img src="images/img01.jpg" alt="Coche 01" />
+			</div>
+			<div class="slide"><img src="images/img02.jpg" alt="Coche 02" />
+			</div>
+			<div class="slide"><img src="images/img03.jpg" alt="Coche 03" />
+			</div>
+			<div class="slide"><img src="images/img04.jpg" alt="Coche 04" />
+			</div>
+			<div class="slide"><img src="images/img05.jpg" alt="Coche 05" />
+			</div>
+		</div>
+		<!-- /slidesContainer -->
+
+	</div>
+	<!-- /slider -->
+
+</div>
+<!-- /sliderContainer -->
+
 <p>
-	<center>
-		<%= link_to 'Nuevo Error / Sugerencia', new_bug_path, :class => 'css3button' %>
-	</center>
+	&nbsp;
 </p>
-<p>&nbsp;</p>
+
 
 <table border="1">
 	<tr>
