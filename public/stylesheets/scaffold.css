@@ -28,7 +28,6 @@ a:visited {
 }
 a:hover {
 	color: #FFF;
-	
 }
 
 div.field, div.actions {
@@ -74,25 +73,25 @@ div.field, div.actions {
 	outline: 0;
 }
 .sliderContainer {
-	width: 620px;
-	height: 350px;
+	width: 707px;
+	height: 253px;
 	position: relative;
-	margin: 0 0 0 500px;
+	margin: 0 0 0 445px;
 }
 #slider {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
-	width: 470px;
-	height: 350px;
+	width: 552px;
+	height: 252px;
 	background: #FFF;
 	border: 5px solid #FFF;
 	overflow: hidden;
 	position: relative;
-	margin: 0 0 0 70px ;
+	margin: 0 0 0 70px;
 }
 #slider .slide {
-	width: 400px;
-	height: 350px;
+	width: 552px;
+	height: 252px;
 	float: left;
 }
 .prev, .next {
@@ -100,7 +99,7 @@ div.field, div.actions {
 	height: 56px;
 	width: 56px;
 	position: absolute;
-	top: 147px;
+	top: 253px;
 }
 .prev {
 	background: url('../images/slider-prev.png') no-repeat;
@@ -121,6 +120,7 @@ div.field, div.actions {
 
 #user_nav {
 	text-align: right;
+	margin-bottom: 12px;
 }
 
 h3 {
@@ -154,26 +154,52 @@ h3 {
 	text-shadow: 0px -1px 0px rgba(000,000,000,0.2), 0px 1px 0px rgba(255,255,255,0.3);
 }
 
-
 #wrapper {
-    margin: 0 auto;
-    width: 1000px;
+	margin: 0 auto;
+	width: 1000px;
 }
 
 #tapa {
-    float: left;
-    width: 316px;
-    text-align: center;
+	float: left;
+	width: 271px;
+	height: 417px;
+	text-align: center;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 5px solid #FFF;
+	/* margin-bottom: 20px; */
+	padding-top: 13px;
+
 }
 
 #titulo {
 	text-align: center;
-    float: left;    
-    width: 674px;
-    padding-left: 10px;
+	float: left;
+	width: 674px;
+	padding-left: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 5px solid #FFF;
+	margin-bottom: 29px;
+	margin-left: 20px;
 }
 
-#botonMonono {
+#botonMonono1 {
 	position: relative;
-	margin-top: 40px;
+	margin-top: 11px;
+}
+
+#botonMonono2 {
+	position: relative;
+	margin-top: 28px;
+}
+
+#tabla {
+	position: relative;
+	margin-top: 150px;
+}
+
+#contacto {
+	position: relative;
+	margin-top: 20px;
 }
