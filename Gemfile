@@ -29,7 +29,7 @@ gem 'railroad'
 
 gem "recaptcha", :require => "recaptcha/rails"
 
-#gem 'devise'
+gem 'devise'
 gem 'devise-encryptable'
 # Use unicorn as the web server
 # gem 'unicorn'

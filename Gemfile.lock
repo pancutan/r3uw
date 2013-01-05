@@ -99,6 +99,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  devise
   devise-encryptable
   jquery_ujs_extended
   pg
