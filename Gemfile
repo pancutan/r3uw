@@ -10,8 +10,12 @@ gem 'rails', '3.2.9'
 #gem 'prototype-rails'
 gem 'jquery_ujs_extended'
 
+group :development, :test do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'sqlite3', '1.3.5'
+end
 #gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'sqlite3'
+#gem 'sqlite3'
 
 gem 'railroad'
 
