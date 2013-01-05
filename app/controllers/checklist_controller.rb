@@ -9,10 +9,10 @@ class ChecklistController < ApplicationController
 
   def check
     Bug.update_all("resolved = 'f', accepted = 'f'")
-    
+
     #debugger
     @bugs = Bug.all
- 
+
     #@_params[:cb_]["13"]
     @bugs.each do |bug|
 
@@ -22,7 +22,7 @@ class ChecklistController < ApplicationController
             bug.save
           end #fin if
       end #fin paramw
-      
+
       params[:cb2_].each do |parametro|
           if bug.id == parametro[0].to_i
             bug.resolved = true
@@ -39,9 +39,9 @@ class ChecklistController < ApplicationController
     #@bug.save
 
 
-    #Bug.find(params[:cb_]).update_attributes(:accepted => true) 
+    #Bug.find(params[:cb_]).update_attributes(:accepted => true)
     #Bug.all.each do |x|
-    #  if x.id == 
+    #  if x.id ==
     #end
 
 #@bicho = Bug.find(params[:id])
@@ -50,7 +50,7 @@ class ChecklistController < ApplicationController
     #x = params[:cb_]
     #x.each do |y|
 
-    redirect_to (:action => 'index') 
+    redirect_to :action => 'index'
   end
 
 end
