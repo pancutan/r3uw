@@ -16,8 +16,9 @@ gem 'jquery_ujs_extended'
 #end
 
 gem 'sqlite3', :group => [:development, :test]
+
 group :production do
-  gem 'thin'
+#  gem 'thin'
   gem 'pg'
 end
 
