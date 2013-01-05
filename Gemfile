@@ -10,7 +10,9 @@ gem 'rails', '3.2.9'
 #gem 'prototype-rails'
 gem 'jquery_ujs_extended'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+#gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3'
+
 gem 'railroad'
 
 gem "recaptcha", :require => "recaptcha/rails"
