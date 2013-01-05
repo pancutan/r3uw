@@ -11,10 +11,15 @@ gem 'rails', '3.2.9'
 gem 'jquery_ujs_extended'
 
 #group :development, :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem 'sqlite3', '1.3.5'
+#  gem 'sqlite3-ruby', :require => 'sqlite3'
+#  gem 'sqlite3', '1.3.5'
 #end
 
+gem 'sqlite3', :group => [:development, :test]
+group :production do
+  gem 'thin'
+  gem 'pg'
+end
 
 #gem 'sqlite3-ruby', :require => 'sqlite3'
 #gem 'sqlite3'
