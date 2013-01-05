@@ -4,7 +4,6 @@ gem 'rails', '3.2.9'
 
 #gem 'bundler', '1.2.5'
 
-gem 'ruby-debug'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -24,8 +23,9 @@ gem 'devise'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'ruby-debug'
+# To use debugger usando ruby-debug en lugar de ruby-debug19 para prevenir http://stackoverflow.com/questions/12404678/getting-error-while-installing-lincache19-in-rails-project
+#gem 'ruby-debug19'
+#gem 'ruby-debug'
 
 # Bundle the extra gems:
 # gem 'bj'
