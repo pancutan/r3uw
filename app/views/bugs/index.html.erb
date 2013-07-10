@@ -1,4 +1,35 @@
 <div id="wrapper">
+	<div id="contacto">
+		<ul>
+			<li>
+				<span class="css3button2">Sergio A. Alonso:</span>				
+			</li>
+			<li>
+				<a class="css3button" href="http://ar.linkedin.com/in/alonsosergio">Perfil en LinkedIn</a>
+			</li>
+			<li>
+				<a class="css3button" href="http://www.twitter.com/karancho">Twitter</a>
+			</li>
+			<li>
+				<a class="css3button" href="http://obelix.bunker.org.ar">Blog (+ estupideces)</a>
+			</li>
+						<li>
+				<a class="css3button" href="http://www.bunker.org.ar/incubadora">Manual de Redes Libres</a>
+			</li>
+			<li>
+				<a class="css3button" href="http://www.github.com/karancho">GitHub</a>
+			</li>
+			<li>
+				<a class="css3button" href="http://about.me/elbunker">Contacto</a>
+			</li>
+
+			<li>
+				<span class="css3button2">Email: sergio at eim esc edu ar</span>
+			</li>
+
+		</ul>
+	</div>
+	
 	<div id="tapa">
 		<a href="http://www.bunker.org.ar/incubadora/LibroRails3"> <img src="images/tapa.jpg" width="221" height="317"/> </a>
 
@@ -16,120 +47,92 @@
 		<h3>Bienvenido al sistema de seguimiento de errores de este libro. Antes de postear su descubrimiento, sírvase chequear
 		su versión contra la última disponible.</a></h3>
 	</div>
-	<div id="elslider">
-		&nbsp;
-	</div>
-</div>
 
-<div id="sliderContenedor" class="sliderContainer">
+	<div id="sliderContenedor" class="sliderContainer">
 
-	<a href="#siguiente" class="next" title="Siguiente"></a>
-	<a href="#anterior" class="prev" title="Anterior"></a>
+		<a href="#siguiente" class="next" title="Siguiente"></a>
+		<a href="#anterior" class="prev" title="Anterior"></a>
 
-	<div id="slider">
+		<div id="slider">
 
-		<div class="slidesContainer">
-			<div class="slide"><img src="images/img01.png" alt="img01.png" />
+			<div class="slidesContainer">
+				<div class="slide"><img src="images/img01.png" alt="img01.png" />
+				</div>
+				<div class="slide"><img src="images/img02.png" alt="img02.png" />
+				</div>
+				<div class="slide"><img src="images/img03.png" alt="img03.png" />
+				</div>
+				<div class="slide"><img src="images/img04.png" alt="img04.png" />
+				</div>
+				<div class="slide"><img src="images/img05.png" alt="img05.png" />
+				</div>
+				<div class="slide"><img src="images/img06.png" alt="img06.png" />
+				</div>
 			</div>
-			<div class="slide"><img src="images/img02.png" alt="img02.png" />
-			</div>
-			<div class="slide"><img src="images/img03.png" alt="img03.png" />
-			</div>
-			<div class="slide"><img src="images/img04.png" alt="img04.png" />
-			</div>
-			<div class="slide"><img src="images/img05.png" alt="img05.png" />
-			</div>
-			<div class="slide"><img src="images/img06.png" alt="img06.png" />
-			</div>
+			<!-- /slidesContainer -->
+
 		</div>
-		<!-- /slidesContainer -->
+		<!-- /slider -->
 
 	</div>
-	<!-- /slider -->
+	<!-- /sliderContainer -->
+
+	<div id="tabla">
+		<table border="1">
+			<tr>
+				<th>Reportado por</th>
+				<th>Version</th>
+				<th>Pagina</th>
+				<th>Type</th>
+
+				<% if user_signed_in? %>
+				<th>Email</th>
+				<% end %>
+
+				<th>Descripcion</th>
+				<th>Aceptado por Sergio</th>
+				<th>Resuelto</th>
+
+				<th></th>
+			</tr>
+
+			<% @bugs.each do |bug| %>
+			<tr>
+				<td align="center"><%= bug.name %></td>
+				<td align="center"><%= bug.version.version %></td>
+				<td align="center"><%= bug.page %></td>
+				<td> <% if bug.error_type.errortype == "Ortografía / Gramática" %> <font color="orange"> <% end %>
+
+					<% if bug.error_type.errortype == "Error Técnico" %> <font color="red"> <% end %>
+
+						<% if bug.error_type.errortype == "Sugerencia" %> <font color="yellow"> <% end %>
+
+							<%= bug.error_type.errortype %> </td>
+
+				<% if user_signed_in? %>
+				<td align="center"><%= bug.email %></td>
+				<% end %>
+
+				<td><%= bug.description %></td>
+				<td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.accepted, :value => bug.id, :disabled => true %> </td>
+
+				<td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.resolved, :value => bug.id, :disabled => true %> </td>
+
+				<td><%= link_to '?', bug %></td>
+
+				<% if user_signed_in? %>
+				<td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+				<td><%= link_to 'X', bug, :confirm => 'Are you sure?', :method => :delete %> </td>
+				<% end %>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+	<br />
 
 </div>
-<!-- /sliderContainer -->
 
 <p>
 	&nbsp;
 </p>
 
-<div id="tabla">
-	<table border="1">
-		<tr>
-			<th>Reportado por</th>
-			<th>Version</th>
-			<th>Pagina</th>
-			<th>Type</th>
-
-			<% if user_signed_in? %>
-			<th>Email</th>
-			<% end %>
-
-			<th>Descripcion</th>
-			<th>Aceptado por Sergio</th>
-			<th>Resuelto</th>
-
-			<th></th>
-		</tr>
-
-		<% @bugs.each do |bug| %>
-		<tr>
-			<td align="center"><%= bug.name %></td>
-			<td align="center"><%= bug.version.version %></td>
-			<td align="center"><%= bug.page %></td>
-			<td> <% if bug.error_type.errortype == "Ortografía / Gramática" %> <font color="orange"> <% end %>
-
-				<% if bug.error_type.errortype == "Error Técnico" %> <font color="red"> <% end %>
-
-					<% if bug.error_type.errortype == "Sugerencia" %> <font color="yellow"> <% end %>
-
-						<%= bug.error_type.errortype %> </td>
-
-			<% if user_signed_in? %>
-			<td align="center"><%= bug.email %></td>
-			<% end %>
-
-			<td><%= bug.description %></td>
-			<td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.accepted, :value => bug.id, :disabled => true %> </td>
-
-			<td align="center"><%= check_box_tag "cb_[#{bug.id}]", 'yes', bug.resolved, :value => bug.id, :disabled => true %> </td>
-
-			<td><%= link_to '?', bug %></td>
-
-			<% if user_signed_in? %>
-			<td><%= link_to 'Edit', edit_bug_path(bug) %></td>
-			<td><%= link_to 'X', bug, :confirm => 'Are you sure?', :method => :delete %> </td>
-			<% end %>
-		</tr>
-		<% end %>
-	</table>
-</div>
-<br />
-
-<div id="contacto">
-	<p>
-		<b>Sergio A. Alonso</b> - Datos de Contacto:
-	</p>
-	<ul>
-		<li>
-			<a href="http://ar.linkedin.com/in/alonsosergio">Perfil en LinkedIn</a>
-		</li>
-		<li>
-			<a href="http://www.twitter.com/karancho">Follow me on Twitter!</a>
-		</li>
-		<li>
-			<a href="http://obelix.bunker.org.ar">Blog</a>
-		</li>
-		<li>
-			<a href="http://www.github.com/karancho">GitHub</a>
-		</li>
-		<li>
-			<a href="http://about.me/elbunker">Mas cosas</a>
-		</li>
-
-		<li>
-			Email: sergio at eim esc edu ar
-		</li>
-
-	</ul>
